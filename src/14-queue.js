@@ -12,16 +12,26 @@
  */
 
 class Queue {
-  get size() {
-    throw new Error('Not implemented');
+  constructor() {
+    this.head = null;
+    this.tail = null;
+    this.length = 0;
   }
 
-  enqueue(/* element */) {
-    throw new Error('Not implemented');
+  get size() {
+    return this.length;
+  }
+
+  enqueue() {
+
   }
 
   dequeue() {
-    throw new Error('Not implemented');
+    const current = this.head; // saves the link to the head which we need to remove
+    this.head = this.head.next; // moves the head link to the second Node in the Queue
+    this.length--; // decreaments the length of our Queue
+
+    return current.value; // returns the removed Node's value
   }
 }
 
